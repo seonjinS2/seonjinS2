@@ -16,3 +16,88 @@ public class _05_MethodOverloading {
         b1.record();
     }
 }
+
+
+
+package chap_07;
+
+public class _04_method {
+    public static void main(String[] args) {
+        BlackBox b1 = new BlackBox();
+        b1.modelName = "까망";
+
+        b1.autoReport();
+        b1.canAutoReport = true;
+        b1.autoReport();
+        System.out.println("----------------------");
+        b1.insertMemoryCard(3);
+
+
+        //일반영상 : type 1
+        //이벤트 영상(충돌감지) : type2
+
+        int fileCount = b1.getVideoFileCount(1);
+        System.out.println(fileCount);
+
+        fileCount=b1.getVideoFileCount(2);
+        System.out.println(fileCount);
+
+    }
+}
+
+package chap_07;
+
+public class BlackBox {
+    String modelName;
+    String resolution;
+    int price;
+    String color;
+
+    static boolean canAutoReport = false; // 스태틱 = 클래스변수 , 클래스의 모든 객체에 적용
+
+    //자동신고기본메서드
+    void autoReport() {
+        if (canAutoReport) {
+            System.out.println("충돌감지, 자동신고됩니다");
+        } else {
+            System.out.println("자동신고기능이 지원되지 않습니다.");
+        }
+    }
+
+    void insertMemoryCard(int capacity) {
+        System.out.println("메모리카드가 삽입됐습니다");
+        System.out.println("용량은 " + capacity + "입니다");
+    }
+
+
+    int getVideoFileCount(int type) {
+        if (type == 1) {
+            System.out.println("일반영상입니다.");
+            return 9;
+        }
+        if (type == 2) {
+            System.out.println("이벤트 영상입니다.");
+            return 1;
+        }
+        return 10;
+    }
+
+    void record(boolean showDateTime, boolean showSpeed, int min) {
+        System.out.println("녹화시작");
+        if (showDateTime) {
+            System.out.println("날짜정보표시");
+        }
+        if (showSpeed) {
+            System.out.println("스피드 정보표시");
+        }
+        System.out.println("영상은 " + min + "분 단위로 기록");
+    }
+
+    void record(){
+        record(true, true, 100);
+    }
+
+}
+
+
+
