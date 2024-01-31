@@ -83,7 +83,7 @@ public class BlackBox {
         return 10;
     }
 
-    void record(boolean showDateTime, boolean showSpeed, int min) {
+    void record(boolean showDateTime, boolean showSpeed, int min) {            // 이 부분을 따라 함
         System.out.println("녹화시작");
         if (showDateTime) {
             System.out.println("날짜정보표시");
@@ -94,7 +94,7 @@ public class BlackBox {
         System.out.println("영상은 " + min + "분 단위로 기록");
     }
 
-    void record(){
+    void record(){                                                            // 이 부분이 메서드 오버라이딩이다. 
         record(true, true, 100);
     }
 
