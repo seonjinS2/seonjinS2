@@ -6,7 +6,6 @@ public class _05_MethodOverloading {
         b1.modelName = "까망이";
 
         //녹화 메서드
-
         b1.record(true, true, 3);
         System.out.println("-----------------------");
         b1.record(true, false, 1);
